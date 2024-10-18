@@ -7,7 +7,7 @@ public class Tablero implements Serializable {
 
     private Propiedad[] casillas = new Propiedad[40];
     private Random dado = new Random();
-    private transient Scanner scanner = new Scanner(System.in);
+    private transient Scanner scanner;
 
     public Tablero() {
         casillas[0] = new Propiedad("Armengual de la Mota", 100, 30);
@@ -53,6 +53,8 @@ public class Tablero implements Serializable {
     }
 
     public void realizarTurno(Jugador jugador) {
+        
+        scanner = new Scanner(System.in);
         
         if (jugador.estaEnCarcel()) {
             System.out.println(jugador.getNombre() + " esta en la carcel. Turnos restantes: " + (jugador.getTurnosEnCarcel() - 1));
