@@ -69,7 +69,7 @@ public class Juego {
                     System.out.println("Opción no válida.");
                     break;
             }
-        }
+        } scanner.close();
     }
 
 
