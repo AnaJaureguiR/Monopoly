@@ -54,7 +54,7 @@ public class Juego {
             scanner.nextLine();
             switch (opcion) {
                 case 1:
-                    tablero.realizarTurno(jugadores[jugadorActual]);
+                    tablero.realizarTurno(jugadores[jugadorActual], scanner);
                     jugadorActual = (jugadorActual + 1) % jugadores.length; // Cambiar turno
                     break;
                 case 2:
@@ -69,7 +69,7 @@ public class Juego {
                     System.out.println("Opción no válida.");
                     break;
             }
-        } scanner.close();
+        }
     }
 
 

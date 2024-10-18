@@ -98,8 +98,8 @@ public class Jugador implements Serializable {
             }
         }
     }
-    
-    public void mostrarDinero(){
-        System.out.println(nombre + " tiene "+ this.getDinero()+"€");
+
+    public void mostrarDinero() {
+        System.out.println(nombre + " tiene " + this.getDinero() + "€");
     }
 }

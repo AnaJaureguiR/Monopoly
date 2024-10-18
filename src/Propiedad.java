@@ -8,22 +8,22 @@ public class Propiedad implements Serializable {
     private Jugador propietario;
     private int precioAlquiler;
 
-    public Propiedad (String nombre, int precio, int precioAlquiler){
+    public Propiedad(String nombre, int precio, int precioAlquiler) {
         this.nombre = nombre;
         this.precio = precio;
         this.propietario = null;
         this.precioAlquiler = precioAlquiler;
     }
 
-    public String getNombre(){
+    public String getNombre() {
         return nombre;
     }
 
-    public int getPrecio(){
+    public int getPrecio() {
         return precio;
     }
 
-    public boolean estaDisponible(){
+    public boolean estaDisponible() {
         return propietario == null;
     }
 
@@ -34,7 +34,7 @@ public class Propiedad implements Serializable {
     public void setPrecioAlquiler(int precioAlquiler) {
         this.precioAlquiler = precioAlquiler;
     }
-        
+
     public void comprar(Jugador jugador) {
         if (jugador.puedePagar(precio)) {
             propietario = jugador;
@@ -45,17 +45,17 @@ public class Propiedad implements Serializable {
             System.out.println("No tienes suficiente dinero para pagar");
         }
     }
-    
-    public void pagarAlquiler(Jugador jugador){
+
+    public void pagarAlquiler(Jugador jugador) {
         jugador.modificarDinero(-precioAlquiler);
-       
+
     }
 
-    public String getPropietario(){
-        if(propietario!=null){
+    public String getPropietario() {
+        if (propietario != null) {
             return propietario.getNombre();
         }
-        
+
         return "Ninguno";
     }
 }
